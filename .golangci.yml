@@ -61,6 +61,10 @@ linters:
       - legacy
       - std-error-handling
     rules:
+      # Legacy in-toto statement types remain part of the v2 compatibility API.
+      - linters:
+          - staticcheck
+        text: SA1019
       - linters:
           - errcheck
           # We want to allow using os.Getenv and os.Setenv in tests because it
